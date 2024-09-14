@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import {Routes, Route, HashRouter } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -16,7 +16,7 @@ const App = () => {
   const [order, setOrder] = useState(null)
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />}></Route>
@@ -30,7 +30,7 @@ const App = () => {
         <Route path='/product/:id' element={<ProductDetail/>}></Route>
       </Routes>
       <Footer />
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
